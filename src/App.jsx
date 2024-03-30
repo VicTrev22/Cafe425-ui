@@ -1,5 +1,6 @@
 import NavigationBar from "./navigation-bar/navigation-bar";
 import "./App.css";
+import Footer from "./footer/footer";
 
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
         <section></section>
         <section></section>
         <section></section>
-      </main>
-      <footer></footer> */}
+      </main> */}
+      <Footer></Footer>
     </>
   );
 }
