@@ -4,10 +4,58 @@
   align-items: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  position: relative;
+  z-index: 9999;
 }
 
 .header-menu {
   display: none;
+}
+
+.icon-common {
+  transition: opacity 0.3s ease;
+}
+
+.icon-hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.icon-container {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  right: 0; /* Align to the right edge */
+  transform: translateY(-50%); /* Adjust vertically to truly center */
+  width: 3rem; /* Adjust based on actual size */
+  height: 2rem; /* Adjust based on actual size */
+  z-index: 100; /* Ensure it's above other content */
+}
+
+.fa-bars,
+.fa-times {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(-clr-charcoal);
+  width: var(--size-2xl);
+  height: var(--size-2xl);
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fa-times {
+  opacity: 0;
+}
+
+/* When toggled, apply these styles possibly by adding a class */
+.show .fa-bars {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+
+.show .fa-times {
+  opacity: 1;
+  transform: rotate(90deg);
 }
 
 .header-bar {
@@ -15,6 +63,11 @@
   width: var(--size-2xl);
   height: var(--size-2xl);
   display: block;
+  cursor: pointer;
+}
+
+.header-join {
+  font-size: var(--size-xs);
 }
 
 /* xs */
@@ -49,11 +102,12 @@
     padding-top: 1.5em;
   }
 
-  .header-join {
-    font-size: var(--size-xs);
+  .header-bar {
+    display: none;
   }
 
-  .header-bar {
+  .mobile-navigation,
+  .icon-container {
     display: none;
   }
 }
