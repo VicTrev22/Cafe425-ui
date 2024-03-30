@@ -33,6 +33,7 @@ function NavigationBar() {
   return (
     <>
       <header className="header container">
+        <p>cafe 425</p>
         <nav>
           <ul className="header-menu">
             <li>
