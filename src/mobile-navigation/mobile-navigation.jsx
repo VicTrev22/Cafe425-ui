@@ -3,38 +3,38 @@ import "./mobile-navigation.css";
 
 MobileNavigation.propTypes = {
   show: PropTypes.bool.isRequired,
+  isClosing: PropTypes.bool,
+  open: PropTypes.bool,
 };
 
-function MobileNavigation({ show }) {
+function MobileNavigation({ show, isClosing, open }) {
   return (
     <>
       <div
-        className={`mobile-navigation ${show ? "mobile-navigation-shown" : ""}`}
+        className={`mobile-navigation ${
+          show ? "mobile-navigation-shown" : ""
+        } ${isClosing ? "closing-text" : ""} ${open ? "open-text" : ""}`}
       >
         <nav>
-          <ul className="mobile-menu">
-            <li>
-              <a className="mobile-link" href="#home">
-                Home
-              </a>
-            </li>
-            <li>
-              <a className="mobile-link" href="#events">
-                Events
-              </a>
-            </li>
-            <li>
-              <a className="mobile-link" href="#contact">
-                Contact
-              </a>
-            </li>
-            <li className="mobile-line"></li>
-            <li>
-              <a className="header-join btn" href="#">
-                Join Us
-              </a>
-            </li>
-          </ul>
+          <div className="container container-pad">
+            <h1 className={`uppercase ${show ? "text-animation" : ""}`}>
+              <span className="split">
+                <div className="mask">
+                  <div className="line">Home</div>
+                </div>
+              </span>
+              <span className="split">
+                <div className="mask">
+                  <div className="line">Events</div>
+                </div>
+              </span>
+              <span className="split">
+                <div className="mask">
+                  <div className="line">Contact</div>
+                </div>
+              </span>
+            </h1>
+          </div>
         </nav>
       </div>
     </>

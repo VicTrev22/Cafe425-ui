@@ -1,19 +1,16 @@
 import NavigationBar from "./navigation-bar/navigation-bar";
 import "./App.css";
 import Footer from "./footer/footer";
+import HeroSection from "./hero-section/hero-section";
 
 function App() {
   return (
     <>
       <NavigationBar></NavigationBar>
-      {/* <main>
+      <main>
         <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
-      </main> */}
+        <HeroSection></HeroSection>
+      </main>
       <Footer></Footer>
     </>
   );

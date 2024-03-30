@@ -1,26 +1,90 @@
 .mobile-navigation {
   position: fixed;
-  top: 0;
-  left: 0;
   z-index: 999;
   width: 100%;
   height: 100%;
   background-color: var(--clr-ivory);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex-direction: column; /* Align children (nav) vertically */
+  align-items: flex-start; /* Align children to the start (left) */
+  text-align: left; /* Ensure text within is left aligned */
   transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+
+.container-pad {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.closing-text .uppercase .split .mask {
+  height: auto; /* Start from the current height */
+  transition: height 0.5s ease-out; /* Animate the height */
+}
+
+/* Immediately start the reverse animation for the lines */
+.closing-text .uppercase .split .line {
+  transform: translateY(100%) rotate(5deg); /* Move back down */
+  opacity: 0; /* Fade out */
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  transition-delay: 0s; /* Start immediately */
+}
+
+.closing-text .uppercase .split:nth-child(1) .line {
+  transition-delay: 0.6s; /* This will be the last to start hiding */
+}
+
+.closing-text .uppercase .split:nth-child(2) .line {
+  transition-delay: 0.4s; /* This will start hiding after the third item starts */
+}
+
+.closing-text .uppercase .split:nth-child(3) .line {
+  transition-delay: 0.2s; /* This will be the first to start hiding */
+}
+
+.split .mask {
+  overflow: hidden;
+  will-change: transform, opacity; /* For performance optimization */
+}
+
+/* Set the initial state for the lines; they will transition from this state when .mobile-navigation-shown is added */
+.uppercase .split .line {
+  display: inline-block;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(100%) rotate(5deg); /* Start off-screen and tilted */
+  transform-origin: left bottom;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Animate these properties */
+}
+
+/* When .mobile-navigation-shown is present, bring lines into view */
+.open-text .uppercase .split .line {
+  opacity: 1; /* Fade in */
+  transform: translateY(0) rotate(0deg); /* Move to final position */
+}
+
+/* The transition starts after a slight delay, allowing the menu to begin appearing first */
+.open-text .uppercase .split:nth-child(1) .line {
+  transition-delay: 0.2s;
+}
+
+.open-text .uppercase .split:nth-child(2) .line {
+  transition-delay: 0.4s;
+}
+
+.open-text .uppercase .split:nth-child(3) .line {
+  transition-delay: 0.6s;
 }
 
 .mobile-navigation-shown {
   transform: translateX(0); /* Move into view */
 }
 
+.split .mask .line:hover {
+  color: var(--clr-emerald);
+  cursor: pointer;
+}
+
 .mobile-menu {
   list-style: none;
-  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;

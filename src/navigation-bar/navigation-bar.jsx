@@ -6,6 +6,8 @@ import MobileNavigation from "../mobile-navigation/mobile-navigation";
 
 function NavigationBar() {
   const [show, setShow] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
     function handleResize() {
@@ -25,9 +27,23 @@ function NavigationBar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleCloseMenu = () => {
+    setIsClosing(true); // Start the closing animation
+    setOpen(false);
+    setTimeout(() => {
+      setShow(false);
+      setIsClosing(false); // Reset the closing state
+    }, 500); // Delay should match the duration of the text animation
+  };
+
+  // Your toggle function might need adjustment to call handleCloseMenu when closing
   const toggleMenu = () => {
-    console.log(show);
-    setShow(!show);
+    if (show) {
+      handleCloseMenu();
+    } else {
+      setShow(true);
+      setOpen(true);
+    }
   };
 
   return (
@@ -68,7 +84,11 @@ function NavigationBar() {
         </nav>
       </header>
       {/* Mobile Navigation */}
-      <MobileNavigation show={show}></MobileNavigation>
+      <MobileNavigation
+        show={show}
+        isClosing={isClosing}
+        open={open}
+      ></MobileNavigation>
     </>
   );
 }
