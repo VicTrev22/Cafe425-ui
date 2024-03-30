@@ -49,7 +49,7 @@ function NavigationBar() {
   return (
     <>
       <header className="header container">
-        <p>cafe 425</p>
+        <p>Cafe425</p>
         <nav>
           <ul className="header-menu">
             <li>
@@ -64,13 +64,12 @@ function NavigationBar() {
             </li>
             <li>
               <a className="header-link" href="#contact">
-                Contact
+                About
               </a>
             </li>
-            <li className="header-line"></li>
             <li>
-              <a className="header-join btn" href="#">
-                Join Us
+              <a className="header-link" href="#contact">
+                Contact
               </a>
             </li>
           </ul>

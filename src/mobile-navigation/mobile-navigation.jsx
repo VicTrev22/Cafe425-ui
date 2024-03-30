@@ -17,7 +17,11 @@ function MobileNavigation({ show, isClosing, open }) {
       >
         <nav>
           <div className="container container-pad">
-            <h1 className={`uppercase ${show ? "text-animation" : ""}`}>
+            <h1
+              className={`mobile-sapce uppercase ${
+                show ? "text-animation" : ""
+              }`}
+            >
               <span className="split">
                 <div className="mask">
                   <div className="line">Home</div>
@@ -26,6 +30,11 @@ function MobileNavigation({ show, isClosing, open }) {
               <span className="split">
                 <div className="mask">
                   <div className="line">Events</div>
+                </div>
+              </span>
+              <span className="split">
+                <div className="mask">
+                  <div className="line">About</div>
                 </div>
               </span>
               <span className="split">
