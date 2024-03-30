@@ -7,3 +7,118 @@
   letter-spacing: 0.2em;
   user-select: none;
 }
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem; /* Tailwind gap-y-7 */
+  padding: 1rem; /* Tailwind p-4 */
+  background-color: var(
+    --clr-background
+  ); /* Set your desired background color */
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column-title {
+  margin-bottom: 1rem; /* Tailwind mb-4 */
+  font-weight: bold; /* Tailwind font-bold */
+  text-transform: uppercase; /* Tailwind uppercase */
+  border-bottom: 1.5px solid black; /* Tailwind border-b-[1.5px] */
+  padding-bottom: 0.25rem; /* Tailwind pb-1 */
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none; /* Tailwind list-none */
+  margin: 0; /* Tailwind m-0 */
+  padding: 0; /* Tailwind p-0 */
+}
+
+.footer-list li {
+  margin-bottom: 0.5rem; /* Tailwind mb-2 */
+  /* More styles for the list items */
+}
+
+.local-time {
+  /* Styles for the local time */
+}
+
+.footer-bottom {
+  margin-top: 3.5rem; /* Tailwind mt-14 */
+  /* Styles for the bottom footer content */
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    grid-template-columns: repeat(4, 1fr); /* Tailwind md:grid-cols-4 */
+    gap: 2.5rem; /* Tailwind md:gap-x-10 */
+  }
+}
+
+.footer-section {
+  margin-top: 3.5rem; /* mt-14 equivalent */
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout */
+  gap: 2.5rem; /* gap-x-10 equivalent */
+  align-items: end;
+}
+
+@media (min-width: 640px) {
+  /* sm:grid-cols-12 */
+  .footer-section {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+/* Adjust for medium and larger sizes */
+@media (min-width: 768px) {
+  .footer-section {
+    /* md:col-span-6 lg:col-span-6 */
+  }
+}
+
+.grid-box {
+  padding: 1rem; /* Tailwind p-4 */
+  background-color: var(
+    --clr-background
+  ); /* Set your desired background color */
+}
+
+/* Copyright styles */
+.copyright {
+  order: 2; /* order-last equivalent */
+  font-size: var(--size-4xl); /* Set your variable for h3 size */
+  font-weight: bold;
+
+  /* Adjust for different screen sizes */
+  @media (min-width: 640px) {
+    order: 1; /* sm:order-first */
+  }
+}
+
+/* Local time styles */
+.local-time-container {
+  margin-bottom: 1rem; /* mb-3 equivalent */
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--secondary-300); /* Replace with actual color value */
+
+  /* Adjust for different screen sizes */
+  @media (min-width: 640px) {
+    margin-bottom: 0; /* sm:mb-0 */
+    /* md:col-span-3 lg:col-span-3 */
+  }
+}
+
+.local-time {
+  font-weight: medium;
+  text-transform: uppercase;
+  color: var(--secondary-100); /* Replace with actual color value */
+}

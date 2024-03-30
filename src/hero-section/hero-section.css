@@ -1,0 +1,219 @@
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-2 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative; /* Needed for absolute positioning of children */
+}
+
+.image-container {
+  position: relative; /* Container for the image and overlay */
+  width: 30rem; /* Set width */
+  height: 20rem; /* Set height */
+  margin-top: 2rem; /* Spacing from the top */
+}
+
+.hero-img {
+  display: block; /* Change to block to fill the width of its container */
+  width: 100%; /* Set width to fill container */
+  height: auto; /* Set height to maintain aspect ratio */
+  position: absolute; /* Position it absolutely to overlay the box */
+  top: 50%; /* Center it vertically */
+  left: 50%; /* Center it horizontally */
+  transform: translate(-50%, -50%); /* Offset the transform */
+  z-index: 0; /* Ensure it's above the overlay */
+}
+
+.image-overlay {
+  position: absolute; /* Position over the image */
+  top: 250px;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: var(
+    --clr-charcoal
+  ); /* Example semi-transparent white overlay */
+  z-index: 0; /* Below the image */
+  border-radius: 10px;
+}
+
+.hero-subtitle {
+  color: var(--clr-charcoal);
+  font-size: var(--size-base);
+  line-height: 0.9;
+}
+
+.hero-title {
+  font-size: var(--size-4xl); /* Large and impactful */
+}
+
+.hero-description {
+  max-width: 60ch;
+  color: var(--clr-charcoal);
+  font-size: var(--size-sm);
+}
+
+/* xs */
+@media (min-width: 475px) {
+  .hero {
+    gap: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: var(--size-lg);
+  }
+
+  .hero-title {
+    font-size: var(--size-5xl);
+  }
+
+  .hero-description {
+    font-size: var(--size-base);
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .hero-img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .hero-subtitle {
+    font-size: var(--size-2xl);
+  }
+
+  .hero-title {
+    font-size: var(--size-7xl);
+  }
+
+  .hero-description {
+    font-size: var(--size-lg);
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  .hero {
+    gap: 2rem;
+  }
+
+  .hero-img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .hero-subtitle {
+    font-size: var(--size-4xl);
+  }
+
+  .hero-title {
+    font-size: var(--size-9xl);
+  }
+
+  .hero-description {
+    font-size: var(--size-xl);
+  }
+}
+
+.button-text {
+  font-size: 1rem; /* Adjust as needed */
+  color: var(--clr-charcoal) !important; /* Text color */
+  text-decoration: none; /* No underline by default */
+  margin-right: 0.5em; /* Space between text and icon */
+  transition: text-decoration 0.3s ease; /* Smooth transition for the underline */
+}
+
+.secondary-button {
+  background-color: transparent !important;
+  border-radius: 5px;
+  border: none;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  /* Ensure there's no default underline */
+  text-decoration: none;
+  /* Additional styles for the button */
+}
+
+.secondary-button:hover .button-text {
+  /* Only underline the text on hover */
+  text-decoration: underline;
+}
+
+/* FontAwesome icon size adjustment if necessary */
+.fa-arrow-right {
+  color: var(--clr-charcoal) !important;
+  font-size: 1rem; /* Match icon size to text */
+}
+
+.hero-subtitle {
+  color: #6b705c; /* Subdued color for the subtitle */
+  font-size: 1.25rem; /* Adjust size as needed */
+  margin-bottom: 0.5rem;
+}
+
+.hero-description {
+  color: #2a2a2a; /* Dark color for contrast */
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  margin: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: var(--size-sm);
+}
+
+.header-join {
+  font-size: var(--size-xs);
+}
+
+.sidebar-section {
+  max-width: 400px; /* Adjust the width as needed */
+  padding: 1rem;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.sidebar-item {
+  margin-bottom: 2rem; /* Space between items */
+}
+
+.sidebar-title,
+.sidebar-subtitle {
+  font-size: 1.5rem; /* Larger font size for titles */
+  font-weight: bold;
+  color: #333; /* Dark color for text */
+}
+
+.sidebar-description {
+  font-size: 1rem;
+}
+
+.sidebar-icon {
+  font-size: 2rem; /* Large size for emoji icons */
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-image .image-placeholder {
+  width: 100%; /* Full width of the container */
+  height: 200px; /* Fixed height, adjust as needed */
+  background-color: #ccc; /* Placeholder color */
+  display: block;
+}
