@@ -1,1 +1,9 @@
- 
+.cursor-none {
+  cursor: none;
+}
+.absolute {
+  position: absolute;
+}
+.pointer-events-none {
+  pointer-events: none;
+}

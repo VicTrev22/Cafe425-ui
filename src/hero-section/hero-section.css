@@ -8,14 +8,9 @@
   margin-top: 2rem;
 }
 
-.hero-2 {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.hero2 {
   gap: 1rem;
-  position: relative; /* Needed for absolute positioning of children */
+  margin-top: 2rem;
 }
 
 .image-container {
@@ -192,7 +187,48 @@
 }
 
 .sidebar-item {
-  margin-bottom: 2rem; /* Space between items */
+  text-align: center; /* Center-align text for the title and description */
+}
+
+.event-section {
+  max-width: 500px; /* Set to the desired max-width */
+  margin: 0 auto; /* Center the section */
+  padding: 0 32px; /* Adjust the padding to ensure consistent spacing on both sides */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.event-title {
+  white-space: nowrap; /* Prevents the title from wrapping */
+  overflow: hidden; /* Ensures no overflow of text */
+  text-overflow: ellipsis; /* Adds an ellipsis if the text overflows (optional) */
+  font-size: var(--size-2xl); /* Responsive font-size */
+  margin-top: 0; /* Adjust top margin as needed */
+  margin-bottom: 0.5rem; /* Space between the title and any text below */
+  color: var(--clr-light); /* Set the text color */
+  line-height: 1.2; /* Adjust line height to ensure the text looks good */
+}
+
+.event-title2 {
+  overflow: hidden; /* Ensures no overflow of text */
+  text-overflow: ellipsis; /* Adds an ellipsis if the text overflows (optional) */
+  font-size: var(--size-sm); /* Responsive font-size */
+
+  margin-top: 0; /* Adjust top margin as needed */
+  margin-bottom: 0.5rem; /* Space between the title and any text below */
+  color: var(--clr-light); /* Set the text color */
+  line-height: 1.2; /* Adjust line height to ensure the text looks good */
+}
+
+.centered-elements {
+  text-align: center; /* Center-align the text for elements in this container */
+  width: 100%; /* Ensures the container takes up the full width */
+  margin-top: 1rem; /* Space above this container */
+}
+
+/* Use this class for subtitle, description, and buttons that should be centered */
+.centered-elements > * {
+  margin: 0 auto; /* Centers the elements within the container */
+  display: block; /* Treats each element as a block for proper centering */
 }
 
 .sidebar-title,
@@ -212,8 +248,289 @@
 }
 
 .sidebar-image .image-placeholder {
-  width: 100%; /* Full width of the container */
-  height: 200px; /* Fixed height, adjust as needed */
-  background-color: #ccc; /* Placeholder color */
+  position: relative; /* Set the position to relative to contain absolutely positioned children */
+  border-radius: 1rem;
+  width: 100%; /* Set to the width of the sidebar */
+  height: 300px; /* Set to the desired height */
+  background-color: var(--clr-charcoal); /* This is a placeholder color */
   display: block;
+}
+
+.box {
+  position: absolute;
+  width: 90%; /* Width of the box */
+  bottom: 5%; /* Position at the top 50% of the parent */
+  left: 50%; /* Position at the left 50% of the parent */
+  transform: translateX(-50%);
+  padding: 1rem;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Semi-transparent white background */
+  border-radius: 1rem;
+  /* Additional styling as needed */
+}
+
+.boxholder {
+  position: relative;
+}
+
+.event-name {
+  text-align: left; /* Center text */
+  margin-bottom: 1rem;
+}
+
+.event-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.event-header {
+  font-size: 1.5rem; /* Adjust the font size as needed */
+  color: #333; /* Text color for the event name */
+}
+
+.event-date {
+  font-size: 1rem; /* Adjust the font size as needed */
+  text-align: right; /* Center text */
+}
+
+.date-box {
+  position: absolute;
+  top: 16px; /* Distance from the top of the parent */
+  right: 16px; /* Distance from the right of the parent */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Semi-transparent white background */
+  padding: 8px 16px; /* Vertical and horizontal padding */
+  border-radius: 2rem; /* Rounded corners */
+}
+
+.date-day {
+  font-weight: bold; /* Makes the day bold */
+  font-size: 1rem; /* Size of the day number */
+}
+
+.date-month {
+  font-size: 0.8rem; /* Size of the month text */
+  text-transform: uppercase; /* UPPERCASE the month */
+}
+
+:root {
+  --gutter: 16px;
+  --scroll-bar-width: 15px; /* Adjust as needed */
+  --grid-columns: 4; /* Assuming a 12-column layout */
+  --grid-width: 100%; /* Define your grid width */
+  --grid-max-width: 1920px; /* Define the maximum width of the grid */
+}
+
+.home-page-header__top__title {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: calc(var(--gutter) * 2);
+  margin-bottom: 0.3em;
+  font-size: var(--size-6xl);
+  font-weight: 400;
+  grid-column: 1 / -1;
+}
+
+.word-wrap {
+  display: block;
+  overflow: hidden;
+  padding: 0.05em 0 0.4em;
+  margin: -0.05em 0 -0.4em;
+  line-height: 0.7 !important;
+}
+
+.word-wrap__inner {
+  /* Your other styles... */
+  line-height: 0; /* Set your desired line-height */
+}
+.word-wrap:nth-child(4n-3),
+.word-wrap:nth-child(4n) {
+  flex-basis: 100%;
+}
+.word-wrap:nth-child(4n-3) .word-wrap__inner {
+  margin-left: 0.5em;
+}
+
+.word-wrap:nth-child(4n-2) .word-wrap__inner {
+  margin-left: 0.5025em;
+}
+
+.word-wrap:nth-child(4n-1) {
+  margin-left: 0.1625em;
+}
+
+.word-wrap:nth-child(4n) .word-wrap__inner {
+  margin-top: -0.025em;
+}
+
+@supports (gap: 0) {
+  .grid {
+    gap: 0 var(--gutter);
+  }
+}
+
+.grid {
+  display: grid;
+  width: var(--grid-width);
+  max-width: var(--grid-max-width);
+  margin: 0 auto;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+}
+
+/* We are ignoring the media queries as you requested */
+
+.home-page-header__top__content {
+  position: relative;
+  /* Ignoring the opacity transition */
+}
+
+.home-page-header__top__content__intro {
+  max-width: calc(
+    (
+        clamp(375px, 100vw - var(--scroll-bar-width), 1920px) - var(--gutter) *
+          (var(--grid-columns) + 1)
+      ) / var(--grid-columns) * 4 + var(--gutter) * 3
+  );
+  margin-bottom: calc(var(--gutter) * 2);
+  grid-column: 8 / span 4;
+  font-size: var(--size-sm);
+  font-style: normal;
+  font-weight: 400;
+  line-height: clamp(1.5rem, calc(1.41197rem + 0.37559vw), 1.75rem);
+}
+
+.root_jtbPU {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.section-card {
+  display: flex;
+  justify-content: center;
+  padding: 8rem 2.5rem;
+}
+
+.border2rem {
+  border-radius: 2rem 2rem 0 0;
+}
+
+.workexplain {
+  background-image: none;
+  padding-top: 6rem; /* Overrides the previous padding-top in 'section' */
+  padding-bottom: 8rem; /* Overrides the previous padding-top in 'section' */
+}
+
+.bg-salmon {
+  background-color: var(
+    --clr-emerald
+  ); /* Ensure --salmon is defined in your :root or variables CSS */
+}
+
+.footer-sec {
+  padding: 0rem 2rem;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-ivory);
+  z-index: 2;
+  border-radius: 2rem 2rem 0rem 0rem;
+  margin-top: -2rem;
+}
+
+.move-footer-down {
+  padding: 4rem 0rem 3rem 0rem;
+}
+
+.text-white {
+  color: var(--clr-light);
+}
+
+.text-white h2 {
+  color: var(--clr-light);
+}
+
+.text-white h3 {
+  color: var(--clr-light);
+}
+
+/* EVENT CARD */
+.event-card {
+  width: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-family: "Arial", sans-serif;
+  position: relative;
+  color: #333;
+}
+
+.event-image {
+  background-image: url("your-image-url.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  position: relative;
+}
+
+.event-info {
+  background: white;
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.event-author {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.date-month {
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+
+.date-day {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.event-attendees {
+  /* Style for attendees, possibly as a flex container */
+  margin: 10px 0;
+}
+
+.event-action {
+  text-align: center;
+}
+
+.buy-ticket {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-ticket:hover {
+  background-color: #d81b60;
 }

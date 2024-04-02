@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./navigation-bar.css";
+import logo from "../../public/images/cafe425-logo.png";
 import MobileNavigation from "../mobile-navigation/mobile-navigation";
 
 function NavigationBar() {
@@ -49,38 +50,43 @@ function NavigationBar() {
   return (
     <>
       <header className="header container">
-        <p>Cafe425</p>
-        <nav>
-          <ul className="header-menu">
-            <li>
-              <a className="header-link" href="#home">
-                Home
-              </a>
-            </li>
-            <li>
-              <a className="header-link" href="#events">
-                Events
-              </a>
-            </li>
-            <li>
-              <a className="header-link" href="#contact">
-                About
-              </a>
-            </li>
-            <li>
-              <a className="header-link" href="#contact">
-                Contact
-              </a>
-            </li>
-          </ul>
-          <div
-            className={`icon-container ${show ? "show" : ""}`}
-            onClick={toggleMenu}
-          >
-            <FontAwesomeIcon className="fa-bars" icon={faBars} />
-            <FontAwesomeIcon className="fa-times" icon={faTimes} />
+        <div>
+          <div>
+            <img className="logo" src={logo} alt="logo"></img>
           </div>
-        </nav>
+
+          <nav>
+            <ul className="header-menu">
+              <li>
+                <a className="header-link" href="#home">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a className="header-link" href="#events">
+                  Events
+                </a>
+              </li>
+              <li>
+                <a className="header-link" href="#contact">
+                  About
+                </a>
+              </li>
+              <li>
+                <a className="header-link" href="#contact">
+                  Contact
+                </a>
+              </li>
+            </ul>
+            <div
+              className={`icon-container ${show ? "show" : ""}`}
+              onClick={toggleMenu}
+            >
+              <FontAwesomeIcon className="fa-bars" icon={faBars} />
+              <FontAwesomeIcon className="fa-times" icon={faTimes} />
+            </div>
+          </nav>
+        </div>
       </header>
       {/* Mobile Navigation */}
       <MobileNavigation

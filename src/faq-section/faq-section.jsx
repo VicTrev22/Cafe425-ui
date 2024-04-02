@@ -31,9 +31,6 @@ const FaqSection = () => {
         >
           <button className="faq-question" onClick={() => toggleFAQ(index)}>
             {faq.question}
-            <span className="faq-toggle-icon">
-              {activeIndex === index ? "▼" : "►"}
-            </span>
           </button>
           <div
             className={`faq-answer ${activeIndex === index ? "active" : ""}`}
