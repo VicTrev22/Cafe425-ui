@@ -6,9 +6,14 @@ import HeroSection from "./hero-section/hero-section";
 function App() {
   return (
     <>
+      <svg class="pointer-events-none absolute cursor-none">
+        <filter id="grainy">
+          <feTurbulence type="turbulence" baseFrequency="0.5"></feTurbulence>
+          <feColorMatrix type="saturate" values="0"></feColorMatrix>
+        </filter>
+      </svg>
       <NavigationBar></NavigationBar>
       <main>
-        <section></section>
         <HeroSection></HeroSection>
       </main>
       <Footer></Footer>
